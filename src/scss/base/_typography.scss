@@ -1,0 +1,38 @@
+body {
+  font-family: $font-family-sans-serif-bold;
+  color: $body-font-color;
+  line-height: 1.5;
+  font-weight: 300;
+  font-style: normal;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+
+.text {
+  &--light {
+    font-weight: 300;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+  &--stem-purple {
+    color: map-get($stem-colors, 'stem-purple');
+  }
+  &--stem-blue {
+    color: map-get($stem-colors, 'stem-blue');
+  }
+  &--stem-orange {
+    color: map-get($stem-colors, 'stem-orange');
+  }
+  &--stem-magenta {
+    color: map-get($stem-colors, 'stem-magenta');
+  }
+}

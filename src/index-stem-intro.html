@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="./css/app.css">
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+</head>
+
+<body id="pageIntro">
+  <header class="header-main">
+    <nav class="main-nav main-nav--hidden">
+      <div class="main-nav__links-primary">
+        <a href="#" class="main-nav__link">About Us</a>
+        <a href="#" class="main-nav__link">AllSTEM Blog</a>
+        <a href="#" class="main-nav__link">Contact Us</a>
+        <a href="#" class="main-nav__link">Login</a>
+      </div>
+      <div class="main-nav__links-aside">
+        <a href="#" class="main-nav__link main-nav__link--btn"><img src="./img/VCC-Logo.png" alt="Virtual Connection Center Logo"></a>
+      </div>
+    </nav>
+    <img src="img/allSTEM-logo-alt.svg" alt="AllSTEM Logo" class="header-main__logo-mast">
+    <nav class="secondary-nav secondary-nav--hidden">
+      <a href="#" class="secondary-nav__link">Talent
+        <span class="icon"><img src="./img/fontawesome-pro-5.15.1-web/svgs/light/chevron-down.svg" alt="Down Arrow"></span>
+      </a>
+      <a href="#" class="secondary-nav__link"><span class="icon"><img src="img/fontawesome-pro-5.15.1-web/svgs/light/chevron-up.svg" alt="Up Arrow"></span>Employer
+      </a>
+    </nav>
+  </header>
+  <main>
+    <section class="content-section--hero content-section">
+      <div class="hero__particles" id="particles-js"></div>
+      <div class="hero__exploding-obj" id="babylon-canvas">
+        <span class="hero__exploding-obj-title">Take me In</span>
+        <canvas id="renderCanvas"></canvas>
+      </div>
+      <h1 class="hero-heading">
+        <a class="hero-heading__link" href="#" id="startIntroBtn">
+          <span class="hero-heading__line text--light">The Future</span>
+          <span class="hero-heading__line text--bold">Of Staffing</span>
+          <span class="hero-heading__line hero-heading__line--icons">
+            <img class="hero-heading__icon hero-heading__icon--lg" src="./img/fontawesome-pro-5.15.1-web/svgs/light/chevron-right-alt.svg" alt="Chevron Right">
+            <img class="hero-heading__icon hero-heading__icon--lg" src="./img/fontawesome-pro-5.15.1-web/svgs/light/chevron-right-alt.svg" alt="Chevron Right">
+            <img class="hero-heading__icon hero-heading__icon--lg" src="./img/fontawesome-pro-5.15.1-web/svgs/light/chevron-right-alt.svg" alt="Chevron Right">
+          </span>
+        </a>
+      </h1>
+      <div class="hero__stem" id="stem-container">
+        <h3 class="stem__title">
+          <span class="text--stem-purple">S</span>
+          <span class="text--stem-blue">T</span>
+          <span class="text--stem-orange">E</span>
+          <span class="text--stem-magenta">M</span>
+        </h3>
+        <h4 class="stem__heading stem__heading--s">
+          <a href="#scienceModal" class="stem__heading-link"><span>S</span>cience</a>
+        </h4>
+        <div id="scienceModal" class="stem__modal modal--science">
+          <p><strong>Science</strong> is lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, distinctio molestias! Modi mollitia quo quos vel expedita similique ea totam ducimus! In quidem incidunt sed rerum aperiam. Ea, reprehenderit ab.</p>
+          <div class="modal__cta">
+            <a href="#" class="stem__cta-link text--stem-purple">Find Your Career</a>
+            <span class="stem__cta-divider">|</span>
+            <a href="#" class="stem__cta-link text--stem-purple">Find Great Talent</a>
+          </div>
+        </div>
+        <h4 class="stem__heading stem__heading--t">
+          <a href="#technologyModal" class="stem__heading-link"><span>T</span>echnology</a>
+        </h4>
+        <div id="technologyModal" class="stem__modal modal--technology">
+          <p><strong>Technology</strong> is, ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae obcaecati excepturi fugiat quidem sunt magnam corrupti quibusdam id! Quibusdam soluta quos quisquam neque placeat.</p>
+          <div class="modal__cta">
+            <a href="#" class="stem__cta-link text--stem-blue">Find Your Career</a>
+            <span class="stem__cta-divider">|</span>
+            <a href="#" class="stem__cta-link text--stem-blue">Find Great Talent</a>
+          </div>
+        </div>
+        <h4 class="stem__heading stem__heading--e">
+          <a href="#engineeringModal" class="stem__heading-link"><span>E</span>ngineering</a>
+        </h4>
+        <div id="engineeringModal" class="stem__modal modal--engineering">
+          <p><strong>Engineering</strong> is ipsum, dolor sit amet consectetur adipisicing elit. Eius, distinctio molestias! Modi mollitia quo quos vel expedita similique ea totam ducimus! In quidem incidunt sed rerum aperiam. Ea, reprehenderit ab.</p>
+          <div class="modal__cta">
+            <a href="#" class="stem__cta-link text--stem-orange">Find Your Career</a>
+            <span class="stem__cta-divider">|</span>
+            <a href="#" class="stem__cta-link text--stem-orange">Find Great Talent</a>
+          </div>
+        </div>
+        <h4 class="stem__heading stem__heading--m">
+          <a href="#mathModal" class="stem__heading-link"><span>M</span>ath</a>
+        </h4>
+        <div id="mathModal" class="stem__modal modal--math">
+          <p><strong>Math</strong> is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque sapiente ex aspernatur commodi expedita consequuntur tempore ullam obcaecati dolorum dignissimos, recusandae voluptatum ipsum, omnis impedit nulla fugit itaque maiores veniam, dolorem nobis? Aliquid asperiores possimus magnam, cum nostrum non reprehenderit.</p>
+          <div class="modal__cta">
+            <a href="#" class="stem__cta-link text--stem-magenta">Find Your Career</a>
+            <span class="stem__cta-divider">|</span>
+            <a href="#" class="stem__cta-link text--stem-magenta">Find Great Talent</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="js/app.bundle.js"></script>
+</body>
+
+
+</html>

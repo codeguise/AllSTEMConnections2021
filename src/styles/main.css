@@ -1,0 +1,236 @@
+@media (min-width: 48em) {
+  :root {
+    font-size: calc(0.875rem + ((1vw - 0.48rem) * 0.434));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 120em) {
+  :root {
+    font-size: 1.375rem;
+  }
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: black;
+  background-image: radial-gradient(
+    circle 600px at 51.1% 136%,
+    rgba(10, 56, 16, 0.5) 30%,
+    rgba(15, 14, 14, 1) 91%
+  );
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background: url(pg-bg-pattern.png) repeat transparent;
+}
+body.lightUI {
+  background-color: #fff;
+  background-image: none;
+}
+.pg__main {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10vw;
+}
+.main__logo {
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo__img {
+  width: 155px;
+  height: auto;
+}
+.stem__heading {
+  color: #fff;
+  position: relative;
+  font-size: 4.818rem;
+  font-weight: 200;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.25ch;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 0.25s;
+}
+.lightUI .stem__heading {
+  color: #231f20;
+}
+.container__stem {
+  width: 100%;
+  position: relative;
+}
+
+.stem__heading--dim {
+  opacity: 0.1;
+}
+
+.stem__heading::before {
+  content: '';
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 1em;
+  font-weight: 700;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+  z-index: 1;
+}
+.lightUI .stem__heading::before {
+  color: #fff;
+}
+.stem__heading:hover::before,
+.stem__heading--selected::before {
+  opacity: 1;
+}
+.stem__heading span {
+  opacity: 1;
+  transition: opacity 0.75s ease-in-out;
+}
+.stem__heading:hover span,
+.stem__heading--selected span {
+  opacity: 0;
+}
+
+.heading--s::before {
+  background-image: url('../imgs/s-icon.svg');
+  width: 5.54rem;
+  height: calc(5.54rem * 1.03);
+  content: 'S';
+
+  padding-right: 5px;
+  align-items: flex-end;
+  padding-bottom: 3px;
+  top: 1px;
+  transform: translateX(-30%);
+}
+.heading--t::before {
+  background-image: url(../imgs/t-icon.svg);
+  width: 6.909rem;
+  height: calc(6.909rem * 0.7697);
+  content: 'T';
+  transform: translateX(-45%);
+  justify-content: center;
+  padding-left: 3%;
+}
+.heading--e::before {
+  background-image: url(../imgs/e-icon.svg);
+  width: 6.318rem;
+  height: calc(6.318rem * 0.7625);
+  content: 'E';
+  transform: translateX(-30%);
+  justify-content: center;
+  padding-top: 10px;
+  align-items: center;
+  top: 10px;
+  padding-left: 15px;
+}
+.heading--m::before {
+  background-image: url(../imgs/m-icon.svg);
+  width: 5.27rem;
+  height: calc(5.27rem * 1.267);
+  content: 'M';
+  transform: translateX(0%);
+  justify-content: center;
+  align-items: center;
+  padding-top: 14px;
+  padding-left: 5px;
+  top: -15px;
+}
+.stem__heading a {
+  color: #fff;
+  text-decoration: none;
+}
+.lightUI .stem__heading a {
+  color: #231f20;
+}
+.heading__link {
+  display: inline-block;
+}
+.heading__link:active {
+  transform: scale(0.95);
+}
+.stem__modal {
+  /* display: none; */
+  position: absolute;
+  /* top: 0; */
+  color: #fff;
+  max-width: 60ch;
+  right: 0;
+  text-align: justify;
+  line-height: 1.5;
+  padding-right: 30px;
+  opacity: 0;
+  transition: opacity 0.75s ease-in;
+
+  /*  transform: translate(40px, 0); */
+}
+.lightUI .stem__modal {
+  color: #231f20;
+}
+.stem__modal--open {
+  display: block;
+  opacity: 1;
+}
+.modal--science {
+  transform: translate(0, 0);
+  top: 0;
+}
+.modal--technology {
+  transform: translate(0, -30px);
+  top: 0;
+}
+.modal--engineering {
+  bottom: 0;
+  top: unset;
+  transform: translate(0, 20px);
+}
+.modal--math {
+  bottom: 0;
+  top: unset;
+  transform: translate(0, 0);
+}
+.cta__link {
+  color: #fff;
+  text-decoration: 0;
+  font-weight: 700;
+  font-size: 1.09rem;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.lightUI .cta__link {
+  color: #231f20;
+}
+.cta__divider {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+#particles-js canvas {
+  height: 100vh !important;
+}

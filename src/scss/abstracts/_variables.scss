@@ -1,0 +1,43 @@
+// We use these to define default font stacks
+$font-family-sans-serif-bold: 'Montserrat', Segoe, 'Segoe UI', Optima, Arial,
+  Sans-Serif;
+$font-family-sans-serif: 'Montserrat', Segoe, 'Segoe UI', Optima, Arial,
+  Sans-Serif;
+$font-family-serif: 'Bentham', serif;
+// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+
+// We use these to define default font weights
+$font-weight-normal: normal !default;
+$font-weight-bold: 700 !default;
+
+$white: #ffffff;
+$off-white:#f7f7f7;
+$gray: #606060;
+$main-menu-link-color: $white;
+$white-smoke: #f4f4f4;
+$light-gray: #a6a6a6;
+
+$aluminum: #999999;
+$oil: #4d4d4d;
+$smoke: #cccccc;
+$section-hero-bg: #ebebeb;
+
+$primary-color: hsl(115, 32, 45);
+$muted-primary-color: #355d31;
+$stem-colors: (
+  'stem-purple': hsl(325, 61, 60),
+  'stem-blue': hsl(201, 76, 66),
+  'stem-orange': hsl(36, 95, 54),
+  'stem-magenta': hsl(348, 84, 62),
+);
+$stem-purple: #d75ca3;
+$stem-blue: #65bcea;
+$stem-orange: #f9a11b;
+$stem-magenta: #ef4b6b;
+
+$body-font-family: $font-family-sans-serif;
+$body-font-weight: $font-weight-normal;
+$body-font-style: normal;
+$body-font-color: #202020;
+$footer-font-color: $smoke;
+$header-font-color: $white-smoke;

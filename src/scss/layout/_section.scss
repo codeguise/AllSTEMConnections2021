@@ -1,0 +1,52 @@
+.content-section {
+  padding: 3rem;
+  position: relative;
+
+  & *:not(div) + *:not(div) {
+    margin-top: 1.5rem;
+  }
+
+  &--hero {
+    background: url(/media/3i2o4qvw/hero-home-img.jpg) no-repeat left top;
+    background-size: cover;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include pseudo($loc: before) {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: hsl(0, 0, 31);
+      opacity: 0.15;
+      z-index: 1;
+    }
+    /*  &::before {
+      content: '';
+      position: absolute;
+      
+    } */
+  }
+  &--hero-blog{
+    
+    padding:0;
+    height:0;
+    padding-top: calc(548 / 1280 * 100%);
+    overflow: hidden;
+    @include pseudo($loc: before) {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.15;
+      z-index: 1;
+    }
+  }
+}

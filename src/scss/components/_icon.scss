@@ -1,0 +1,16 @@
+.icon{
+  height:16px;
+  width:16px;
+  fill:$light-gray;
+}
+
+.icon-wrap{
+  border-radius: 50%;
+  border:1px solid $light-gray;
+  display: inline-flex;
+  width:40px;
+  height:40px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}

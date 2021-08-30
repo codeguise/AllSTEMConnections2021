@@ -1,0 +1,28 @@
+@mixin pseudo($loc: before, $content: '', $position: absolute) {
+  &::#{$loc} {
+    content: $content;
+    position: $position;
+    @content;
+  }
+}
+
+@mixin respond($breakpoint){
+  @if($breakpoint == largeup){
+    @media (min-width:1200px) { @content }
+  }
+  @if($breakpoint == mediumup){
+    @media (min-width: 768px) { @content }
+  }
+  @if($breakpoint == small){
+    @media(max-width:767px){@content}
+  }
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
