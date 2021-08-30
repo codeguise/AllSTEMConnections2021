@@ -1,0 +1,32 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogArticle>
+
+<div class="article-card__thumbnail">
+    <a href="@Model.Url()"><img src="@Model.BlogImage.Url()" alt="" class="article-card__thumbnail-img" /></a>
+</div>
+<div class="article-card__body">
+    <div class="article-card__meta">
+        <span class="article-card__meta-tags">
+            @foreach (var tag in Model.Tags)
+            {
+                var url = $"blog/tags?tag={tag}&group=blog";
+
+
+                <a id="" href="@url" class="article-card__meta-link">@tag</a>
+            }
+        </span>
+    </div>
+    <h3 class="article-card__title"><a href="@Model.Url()">@Model.Name</a></h3>
+    <div class="article-card__excerpt">
+        <p>@Model.Excerpt</p>
+    </div>
+    <div class="article-card__author-row">
+        <span class="article-card__author-name">
+            @($"{ Model.AuthorFirstName } { @Model.AuthorLastName }")
+        </span>
+        <span> on </span>
+        <time class="article-card__published-date" datetime="" pubdate>
+            @Model.CreateDate.ToString("dddd, dd MMMM yyyy")
+        </time>
+    </div>
+</div>

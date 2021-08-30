@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<BlogArticle>>
+
+
+@foreach (var article in Model)
+{
+    <article class="article-card">
+        @try
+        {
+            @Html.Partial("_blogSummary", article)
+        }
+        catch (Exception ex)
+        {
+            string er = "There was a problem loading: " + article.Name + " and Id: " + article.Id;
+            @Html.Partial("_sectionError", er)
+        }
+
+
+</article>
+}

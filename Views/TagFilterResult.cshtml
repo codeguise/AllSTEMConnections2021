@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Search>
+
+@{ Layout = "../_MasterLayout.cshtml";
+    ViewBag.Title = Model.Name;
+}
+    <main>
+        <section><h2>@Model.DynamicPageMessage</h2></section>
+
+        <section>
+            <div id="searchResultContainer">
+                @Html.Partial("_searchResultSummaryListBlock", Model.ContentResults)
+            </div>
+
+            <h3>This is the content section.</h3>
+
+            @for (int i = 0; i < Model.PageCount; i++)
+            {
+                var pageNavId = "pagedItem" + i.ToString();
+                var pageIndex = i;
+                var pageNum = i + 1;
+                var url = Url.Action("PagedTagResults", "SearchSurface", new
+                {
+                    pageIndex = pageIndex,
+                    takeCount = Model.NumberOfResults,
+                    tag = Model.Page.Tag,
+                    group = Model.Page.Group,
+                    partialViewName = "_searchResultSummaryListBlock"
+                });
+
+                <button id="@pageNavId" onclick="loadItems('#searchResultContainer', '@url')">@pageNum</button>
+                <text>&nbsp;</text>
+            }
+        </section>
+    </main>
+
+    @section Scripts{
+        <script src="~/Scripts/ajx.js"></script>
+    }

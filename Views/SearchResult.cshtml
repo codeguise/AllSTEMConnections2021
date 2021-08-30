@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Blog>
+    @{ Layout = "_MasterLayout.cshtml";
+    ViewBag.Title = Model.Name;
+    var articlePageNumIds = new List<string>
+        ();
+
+        IList<BlogArticle>
+            articleList = new List<BlogArticle>
+                ();
+                Model.Articles.ToList().ForEach(x => articleList.Add(new BlogArticle(x)));
+
+                }
+                <h2>Search Result View</h2>

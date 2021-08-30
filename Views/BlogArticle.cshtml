@@ -1,0 +1,86 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlogArticle>
+
+@{ Layout = "_MasterLayout.cshtml";
+    ViewBag.Title = Model.Name; }
+
+<main>
+    <section class="content-section content-section--hero-blog-article">
+        <div class="article__tags">
+            @foreach (var tag in Model.Tags)
+            {
+<a href="#" class="article__tag">@tag</a>}
+        </div>
+        <h1 class="article__header">
+            @Model.Name
+        </h1>
+        <div class="article__author-info">
+            <strong>@($" { Model.AuthorFirstName } { Model.AuthorLastName }")</strong> on <time datetime="@Model.CreateDate" pubdate>@Model.CreateDate.ToString("dddd, dd MMMM yyyy")</time>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="article">
+            <article class="article__content">
+                @*<img src="~/Content/Images/2021/01/shutterstock_1185486568.jpg" alt="Aritcle Feature Image" class="article__feature-img" />*@
+                <img src="@Model.BlogImage.Url()" alt="Aritcle Feature Image" class="article__feature-img" />
+                @Model.Content
+                <div class="article__content-footer">
+                    <div class="article__footer-share">
+                        <h4>Please Share This:</h4>
+                        <div class="social-share">
+                            <a href="#" class="social-share__link icon-wrap" title="Share This Article On Twitter">
+                                @Html.Partial("Social/_twitter-icon")
+                            </a>
+                            <a href="#" class="social-share__link icon-wrap" title="Share This Article On LinkedIn">
+                                @Html.Partial("Social/_linkedIn-icon")
+                            </a>
+                            <a href="#" class="social-share__link icon-wrap" title="Share This Article On Facebook">
+                                @Html.Partial("Social/_facebook-icon")
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @*
+                    TODO: Add Related Articles Section
+                *@
+            </article>
+            <aside class="article__sidebar">
+                @*
+                    TODO: Add Search Component
+                *@
+                <div class="article__sidebar-content hide-for-small">
+                    <h4>Please Share This:</h4>
+                    <div class="social-share">
+                        <a href="#" class="social-share__link icon-wrap" title="Share This Article On Twitter">
+                            @Html.Partial("Social/_twitter-icon")
+                        </a>
+                        <a href="#" class="social-share__link icon-wrap" title="Share This Article On LinkedIn">
+                            @Html.Partial("Social/_linkedIn-icon")
+                        </a>
+                        <a href="#" class="social-share__link icon-wrap" title="Share This Article On Facebook">
+                            @Html.Partial("Social/_facebook-icon")
+                        </a>
+                    </div>
+                </div>
+                <div class="article__sidebar-content">
+                    <h4>Follow AllSTEM Connections</h4>
+                    <div class="social-share">
+                        <a href="#" class="social-share__link social-share_link--follow icon-wrap" title="Follow AllSTEM Connection On LinkedIn">
+                            @Html.Partial("Social/_linkedIn-icon")
+                        </a>
+                        <a href="#" class="social-share__link social-share_link--follow icon-wrap" title="Follow AllSTEM Connection RSS Feed">
+                            @Html.Partial("Social/_rss-icon")
+                        </a>
+                    </div>
+                </div>
+                <div class="article__sidebar-content">
+                    <h4>Tags</h4>
+                    <div class="article__tags">
+                        @foreach (var tag in Model.Tags)
+                        {
+            <a href="#" class="article__tag article__tag--button">@tag</a>}
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>

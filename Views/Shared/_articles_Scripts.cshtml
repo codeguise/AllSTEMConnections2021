@@ -1,0 +1,22 @@
+﻿@using (var context = Html.BeginScriptContext())
+{
+    context.AddScriptBlock(
+@<script>
+     var paramArray = function () {
+         var loadCount = 0;
+         var listNum = 1;
+         var articleCount = @Model.ArticleCount;
+         var totalArticleCount = @ViewBag.ChildrenCount;
+         return {
+             loadCount: loadCount,
+             listNum: listNum,
+             articleCount: articleCount,
+             totalArticleCount: totalArticleCount
+         };
+     };
+     var getUrl = function (loadCount, listNum) {
+         return "@Url.Action("LoadArticles", "ArticlesSurface")" + "?pageId=" + @Model.Id  + "&skipCount=" + loadCount + "&listNum=" + listNum;
+     };
+</script>);
+context.AddScriptFile("~/Scripts/articles.js");
+}

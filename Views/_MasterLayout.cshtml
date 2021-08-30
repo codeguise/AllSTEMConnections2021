@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/app.css" />
+    @RenderSection("head", required: false)
+    <script type="text/javascript" src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js" async></script>
+</head>
+<body>
+    <header>
+        @*
+            TODO: Add Header components
+        *@
+    </header>
+    @RenderBody()
+
+    <footer>
+        @*
+            TODO: Add Footer Components
+        *@
+    </footer>
+    <script src="~/Scripts/jquery/jquery.min.js"></script>
+    @RenderSection("scripts", required: false)
+    @Html.RenderScripts()
+</body>
+</html>

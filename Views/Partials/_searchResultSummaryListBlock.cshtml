@@ -1,0 +1,15 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedContent>>
+
+<ul>
+
+
+
+
+    @{
+        foreach (var contentItem in Model)
+        {
+            <li>Type: @contentItem.ContentType.Alias <a href="@contentItem.Url()">@contentItem.Name</a></li>
+        }
+    }
+    </ul>

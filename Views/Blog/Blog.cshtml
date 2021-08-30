@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Blog>
+@{ Layout = "../_MasterLayout.cshtml";
+    ViewBag.Title = Model.Name;
+    var articlePageNumIds = new List<string>();
+
+    IList<BlogArticle> articleList = new List<BlogArticle>();
+    Model.Articles.ToList().ForEach(x => articleList.Add(new BlogArticle(x)));
+
+    }
+
+
+
+<main>
+    <section class="content-section content-section--hero-blog">
+        <div class="hero__blog">
+            <video src="~/Content/Video/AllSTEM-Blog-Header.mp4" autoplay loop muted></video>
+        </div>
+
+    </section>
+    @*<section id="intro">
+            <figure>
+                <img src="" alt="" />
+                <figcaption>Total number of articles to show on this page at a time is @Model.NumOfDisplayedArticles</figcaption>
+            </figure>
+
+        </section>*@
+    <section id="articleList" class="content-section blog">
+        <div id="articleListContainer" class="articles__grid">
+            @Html.Partial("_blogSummaryListBlock", articleList)
+        </div>
+        <div id="articleListPagedNav" class="nav-pagnation">
+            @for (int i = 0; i < Model.PageCount; i++)
+            {
+                var pageNavId = "articlePage" + i.ToString();
+                var pageIndex = i;
+                var pageNum = i + 1;
+                var url = Url.Action("LoadArticles", "ArticlesSurface", new
+
+                {
+                    containerId = Model.Page.ContainerId,
+                    pageIndex = pageIndex,
+                    takeCount = Model.NumOfDisplayedArticles,
+                    articleAlias = BlogArticle.ModelTypeAlias,
+                    partialViewName = "_blogSummaryListBlock"
+                });
+                <button id="@pageNavId" onclick="loadItems('#articleListContainer', '@url' )">@pageNum</button> <text>&nbsp;</text>
+                }
+            </div>
+    </section>
+    <section id="sidePanel">
+        <aside id="tags">
+        </aside>
+        <aside id="dates">
+        </aside>
+        <aside id="social">
+        </aside>
+    </section>
+</main>
+@section Scripts{
+    <script src="~/Scripts/ajx.js"></script>
+}
